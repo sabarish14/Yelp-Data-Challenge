@@ -1,4 +1,17 @@
 from nltk.corpus import wordnet as wn
+def filter_lines(lines,vocab):
+    topic_words=[[]for i in range(len(lines))]
+    for i  in range(len(lines)):
+        
+        for j in range(len(lines[i])):
+            
+            words=lines[i][j].split()
+            for w in words:
+                if w in vocab.keys():
+                    topic_words[i].append(w)
+                    
+                
+    return topic_words
 def build_feature_vector(lines,vocab):
     '''vocab={}
     #lines=lines[1:10]
@@ -13,18 +26,22 @@ def build_feature_vector(lines,vocab):
                 
                 
                 
-    fv=open("vocab.txt","w")       
-    #nouns = wn.all_synsets('n') 
-    #vocab=Set(vocab)
+    fv=open("vocab.txt","w")  
+         
+    
+    topic_words=filter_lines(lines, vocab)
     feature_vector=[[0 for i in range(len(vocab))]for j in range(len(lines))]
     print len(feature_vector)
-    for i  in range(len(lines)):
+    '''for i  in range(len(lines)):
         #print "i",i
         for j in range(len(lines[i])):
             words=lines[i][j].split()
             for w in words:
-                if w in vocab.keys():
-                    feature_vector[i][vocab[w]]=1
+                if w in vocab.keys():'''
+    for i  in range(len(topic_words)):
+        for w in topic_words[i]:
+                col=vocab[w]
+                feature_vector[i][col]+=1
     vocab=vocab.keys()
     for w in vocab:
         fv.write(w+"\n")

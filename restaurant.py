@@ -18,7 +18,7 @@ class restaurant:
     def group_review(self):
         new_reviews=['' for i in range(len(self.id.keys()))]
         for lines,n in zip(self.reviews,self.list_id):
-            print "id:",self.id[n]
+            #print "id:",self.id[n]
             str=new_reviews[self.id[n]]
             str+=lines
             new_reviews[self.id[n]]=str

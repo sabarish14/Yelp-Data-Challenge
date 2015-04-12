@@ -9,12 +9,16 @@ def file_read(filename,col):
         for row in reader:
             #print row[3]
             reviews.append( row[col])
-        reviews=reviews[1:100]
+        #reviews=reviews[1:100]
             
     return reviews
             
-                #print (col)
-                #print row
+def file_read_text(filename):
+    f=open(filename)
+    lines=f.readlines()
+    for i in range(len(lines)):
+        lines[i]=lines[i].replace("\n", "")  
+    return lines
 def write_tuple(lines,filename):
     with open(filename, "w") as the_file:
         csv.register_dialect("custom", delimiter=" ", skipinitialspace=True)
