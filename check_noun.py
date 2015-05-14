@@ -1,5 +1,7 @@
-from nltk.corpus import wordnet as wn
 from nltk import WordNetLemmatizer
+from nltk.corpus import wordnet as wn
+
+
 lmtzr = WordNetLemmatizer()
 #print lmtzr.lemmatize("eating")
 fn=open("noun.txt","w")

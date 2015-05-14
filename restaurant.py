@@ -1,5 +1,6 @@
 from file_read import file_read
 
+
 class restaurant:
     id={}
     reviews=[]

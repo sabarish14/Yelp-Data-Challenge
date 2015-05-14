@@ -1,11 +1,14 @@
 from gensim import matutils
 from gensim.models.ldamodel import LdaModel
-import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
+
 from feature_vector import build_feature_vector
-from preprocess import preprocess
+import numpy as np
 from pos_tagging import pos_tag
+from preprocess import preprocess
 from restaurant import restaurant
+
+
 #import lda.datasets
 filename="az_fast_food_w_elite.csv"
 r=restaurant(filename)

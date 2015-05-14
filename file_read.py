@@ -1,4 +1,6 @@
 import csv
+
+
 def file_read(filename,col):
     with open(filename, 'rb') as f:
         

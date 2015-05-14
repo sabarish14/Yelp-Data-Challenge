@@ -1,11 +1,13 @@
-import numpy as np
+import operator
+
 import lda
 from sklearn.feature_extraction.text import CountVectorizer
+
 from feature_vector import build_feature_vector
-from preprocess import preprocess
+import numpy as np
 from pos_tagging import pos_tag
+from preprocess import preprocess
 from restaurant import restaurant
-import operator
 
 
 #import lda.datasets
@@ -56,7 +58,7 @@ for lines in top_topic_words:
             word_hash[words]=1
 
 sorted_x = sorted(word_hash.items(), key=operator.itemgetter(1),reverse=True)  
-print sorted_x[1:10]     
+print sorted_x[1:500]     
         
     
     

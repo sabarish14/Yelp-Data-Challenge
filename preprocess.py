@@ -1,5 +1,8 @@
 import re
+
 from nltk.tokenize.punkt import PunktSentenceTokenizer
+
+
 def preprocess(lines):
     for i in range(len(lines)):
         #lines[i]=lines[i].lower()

@@ -1,8 +1,11 @@
-from nltk.tag.hunpos import HunposTagger
-from file_read import file_read_text
+from nltk import WordNetLemmatizer
 import nltk
 from nltk.corpus import stopwords
-from nltk import WordNetLemmatizer
+from nltk.tag.hunpos import HunposTagger
+
+from file_read import file_read_text
+
+
 stopset = set(stopwords.words('english'))
 lmtzr = WordNetLemmatizer()
 def pos_tag(lines):

@@ -1,4 +1,6 @@
 from nltk.corpus import wordnet as wn
+
+
 def filter_lines(lines,vocab):
     topic_words=[[]for i in range(len(lines))]
     for i  in range(len(lines)):
